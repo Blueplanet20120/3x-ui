@@ -6,8 +6,8 @@ on:
     tags:
       - "v*.*.*"
 
-  #schedule:
-      #- cron: 0 * */5 * *
+  schedule:
+      - cron: 0 * */5 * *
 
 jobs:
   build:
@@ -47,7 +47,6 @@ jobs:
           elif [ "${{ matrix.platform }}" == "s390x" ]; then
             sudo apt install gcc-s390x-linux-gnu
           fi
-
       - name: Build x-ui
         run: |
           export CGO_ENABLED=1
