@@ -336,7 +336,7 @@ func (s *Server) Start() (err error) {
 	if err != nil {
 		return err
 	}
-	if certFile != "" || keyFile != "" {
+        if certFile != "" && keyFile != "" {
 		cert, err := tls.LoadX509KeyPair(certFile, keyFile)
 		if err == nil {
 			c := &tls.Config{
